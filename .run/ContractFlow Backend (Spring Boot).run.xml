@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ContractFlow Backend (Spring Boot)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="MAIN_CLASS_NAME" value="com.contractflow.ContractFlowApplication" />
+    <option name="VM_PARAMETERS" value="" />
+    <envs>
+      <env name="SPRING_PROFILES_ACTIVE" value="local" />
+      <env name="JAVA_TOOL_OPTIONS" value="-Dfile.encoding=UTF-8" />
+    </envs>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/contractflow-backend" />
+    <module name="contractflow-backend" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,48 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ContractFlow Backend (Postgres)" type="MavenRunConfiguration" factoryName="Maven">
+    <MavenSettings>
+      <option name="myRunnerParameters">
+        <MavenRunnerParameters>
+          <option name="cmdOptions" value="" />
+          <option name="goals">
+            <list>
+              <option value="spring-boot:run" />
+            </list>
+          </option>
+          <option name="multimoduleDir" value="D:\MyDomain\B2B-plaform\contractflow-backend" />
+          <option name="pomFileName" value="pom.xml" />
+          <option name="profiles">
+            <set />
+          </option>
+          <option name="profilesMap">
+            <map />
+          </option>
+          <option name="projectsCmdOptionValues">
+            <list />
+          </option>
+          <option name="resolveToWorkspace" value="false" />
+          <option name="workingDirPath" value="D:\MyDomain\B2B-plaform\contractflow-backend" />
+        </MavenRunnerParameters>
+      </option>
+      <option name="myRunnerSettings">
+        <MavenRunnerSettings>
+          <option name="environmentProperties">
+            <map>
+              <entry key="SPRING_PROFILES_ACTIVE" value="postgres" />
+              <entry key="JAVA_TOOL_OPTIONS" value="-Dfile.encoding=UTF-8" />
+            </map>
+          </option>
+          <option name="jreName" value="21" />
+          <option name="mavenProperties">
+            <map />
+          </option>
+          <option name="runMavenInBackground" value="true" />
+          <option name="skipTests" value="false" />
+          <option name="vmOptions" value="" />
+        </MavenRunnerSettings>
+      </option>
+    </MavenSettings>
+    <method v="2" />
+  </configuration>
+</component>
+

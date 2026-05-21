@@ -1,0 +1,58 @@
+services:
+  backend:
+    build:
+      context: ./contractflow-backend
+    container_name: contractflow-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: contractflow
+      DB_USERNAME: contractflow
+      DB_PASSWORD: contractflow
+      SERVER_PORT: 8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16
+    container_name: contractflow-postgres
+    environment:
+      POSTGRES_DB: contractflow
+      POSTGRES_USER: contractflow
+      POSTGRES_PASSWORD: contractflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - contractflow_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U contractflow -d contractflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7.2
+    container_name: contractflow-redis
+    ports:
+      - "6379:6379"
+
+  minio:
+    image: minio/minio
+    container_name: contractflow-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: contractflow
+      MINIO_ROOT_PASSWORD: contractflow123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - contractflow_minio_data:/data
+
+volumes:
+  contractflow_postgres_data:
+  contractflow_minio_data:

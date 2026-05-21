@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:contractflow}
+    username: ${DB_USERNAME:contractflow}
+    password: ${DB_PASSWORD:contractflow}
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        highlight_sql: true
+
+server:
+  port: 8080
